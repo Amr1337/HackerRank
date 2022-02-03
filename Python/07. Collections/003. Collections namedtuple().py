@@ -3,7 +3,10 @@
 
 
 from collections import namedtuple
-
-
-n, Student = int(input()), namedtuple('Student', input())
-print("{:.2f}".format(sum([int(Student(*input().split()).MARKS) for _ in range(n)]) / n))
+students_number = int(input())
+students = namedtuple("student", input())
+total = 0
+for i in range(students_number):
+    student = students(*input().split())
+    total += int(student.MARKS)
+print('{:.2f}'.format(total/students_number))
